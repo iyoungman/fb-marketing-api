@@ -14,8 +14,10 @@
 * 잠재고객 생성, 수정, 삭제, 리스트 조회, 생성된 잠재고객에 자세한 유저정보 저장(핸드폰 번호)
 
 ## Result
-* API를 통해 실제 페이스북에 생성된 결과는 페이스북 광고 관리자에서 확인할 수 있다
+* API를 통해 실제 페이스북에 생성된 캠페인, 광고 세트 결과는 페이스북 광고 관리자에서 확인할 수 있다
 https://www.facebook.com/ads/manager  
+* API를 통해 실제 페이스북에 생성된 잠재 고객(맞춤 타겟) 결과는 페이스북 자산 라이브러리-타겟메뉴에서 확인 할 수 있다
+https://business.facebook.com/asset-library/audience  
 
 ## Details
 * Swagger를 통해 Request와 Response 확인 가능  
