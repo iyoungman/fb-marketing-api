@@ -47,7 +47,7 @@ https://business.facebook.com/asset-library/audience
 ---  
 
 ## Details
-* Swagger를 통해 Request와 Response 확인 가능  
+* 컴파일 후 Swagger를 통해 Request와 Response 확인 가능  
 http://localhost:8080/swagger-ui.html
 
 ## Reference
