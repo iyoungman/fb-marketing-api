@@ -19,24 +19,24 @@ public class AdSetResponse {
 
 	private String id;
 	private String name;
-	private TargetingDto targetingDto;
+	private Targeting targeting;
 
 
 	@Builder
-	public AdSetResponse(String id, String name, TargetingDto targetingDto) {
+	public AdSetResponse(String id, String name, Targeting targeting) {
 		this.id = id;
 		this.name = name;
-		this.targetingDto = targetingDto;
+		this.targeting = targeting;
 	}
 
 	public static AdSetResponse of(AdSet adSet) {
 		return AdSetResponse.builder()
 				.id(adSet.getId())
 				.name(adSet.getFieldName())
-				.targetingDto(TargetingDto.builder()
+				.targeting(Targeting.builder()
 						.ageMax(adSet.getFieldTargeting().getFieldAgeMax())
 						.ageMin(adSet.getFieldTargeting().getFieldAgeMin())
-						.customAudienceResponseDtos(adSet.getFieldTargeting().getFieldCustomAudiences().stream()
+						.customAudienceResponses(adSet.getFieldTargeting().getFieldCustomAudiences().stream()
 								.map(i -> CustomAudienceResponse.ofRaw(i))
 								.collect(Collectors.toList()))
 						.build())
@@ -46,13 +46,13 @@ public class AdSetResponse {
 
 	@Getter
 	@NoArgsConstructor
-	public static class TargetingDto {
+	public static class Targeting {
 		private Long ageMax;
 		private Long ageMin;
 		private List<CustomAudienceResponse> customAudienceResponses = new ArrayList<>();
 
 		@Builder
-		public TargetingDto(Long ageMax, Long ageMin, List<CustomAudienceResponse> customAudienceResponses) {
+		public Targeting(Long ageMax, Long ageMin, List<CustomAudienceResponse> customAudienceResponses) {
 			this.ageMax = ageMax;
 			this.ageMin = ageMin;
 			this.customAudienceResponses = customAudienceResponses;

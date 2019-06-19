@@ -97,7 +97,7 @@ public class CustomAudienceController {
 	@ApiOperation(value = "잠재고객 타겟팅에 자세한 유저정보 저장", notes = "핸드폰 번호 기반으로 저장")
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "customAudienceId", value = "잠재 고객 ID", required = true),
-			@ApiImplicitParam(name = "phoneNums", value = "핸드폰 번호 목록", example = "10 5322 1661", required = true)
+			@ApiImplicitParam(name = "phoneNums", value = "핸드폰 번호 목록(10 5322 1661<-형태)", example = "10 5322 1661", required = true)
 	})
 	@PostMapping("/detail")
 	public void saveUserInCustomAudience(@RequestBody CustomAudienceDetailRequest customAudienceDetailRequest,

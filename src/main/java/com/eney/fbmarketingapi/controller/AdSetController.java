@@ -25,12 +25,12 @@ public class AdSetController {
 	private final AdSetService adSetService;
 
 
-	@ApiOperation(value = "캠페인에 광고세트 생성", notes = "광고세트 생성하면서 기존에 만들어놓은 잠재고객도 세팅")
+	@ApiOperation(value = "캠페인에 광고세트 생성", notes = "광고세트 생성(잠재고객은 미리 만들어놓은 잠재고객을 세팅)")
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "accountId", value = "광고계정 ID", required = true),
 			@ApiImplicitParam(name = "campaignId", value = "캠페인 ID", required = true),
 			@ApiImplicitParam(name = "adSetName", value = "만들 광고세트 이름", required = true),
-			@ApiImplicitParam(name = "customAudienceId", value = "미리 만들어놓은 잠재고객 있을때만 필요", required = true)
+			@ApiImplicitParam(name = "customAudienceId", value = "미리 만들어놓은 잠재고객을 세팅", required = true)
 	})
 	@PostMapping
 	public void createAdSet(@RequestBody AdSetCreateRequest adSetCreateRequest,

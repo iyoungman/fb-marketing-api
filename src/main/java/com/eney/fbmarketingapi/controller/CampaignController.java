@@ -43,7 +43,7 @@ public class CampaignController {
 
 	@ApiOperation(value = "캠페인 이름 수정", notes = "캠페인 이름 수정")
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "accountId", value = "광고계정 ID", required = true),
+			@ApiImplicitParam(name = "campaignId", value = "캠페인 ID", required = true),
 			@ApiImplicitParam(name = "updateName", value = "수정 될 캠페인 이름", required = true)
 	})
 	@PutMapping

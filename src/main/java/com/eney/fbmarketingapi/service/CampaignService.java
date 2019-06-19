@@ -4,10 +4,8 @@ import com.eney.fbmarketingapi.dto.CampaignCreateRequest;
 import com.eney.fbmarketingapi.dto.CampaignUpdateRequest;
 import com.eney.fbmarketingapi.dto.CampaignsResponse;
 import com.eney.fbmarketingapi.exception.UserDefineException;
-import com.facebook.ads.sdk.APIContext;
-import com.facebook.ads.sdk.APINodeList;
-import com.facebook.ads.sdk.AdAccount;
-import com.facebook.ads.sdk.Campaign;
+import com.facebook.ads.sdk.*;
+import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +41,7 @@ public class CampaignService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("캠페인 저장 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -51,7 +49,7 @@ public class CampaignService {
 	public void updateCampaign(CampaignUpdateRequest campaignUpdateRequest) {
 
 		try {
-			Campaign campaign = Campaign.fetchById(campaignUpdateRequest.getCampaignId(), apiContext);
+			Campaign campaign = findCampaign(campaignUpdateRequest.getCampaignId());
 			campaign.update()
 					.setName(campaignUpdateRequest.getUpdateName())
 					.execute();
@@ -59,7 +57,7 @@ public class CampaignService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("캠페인 이름 수정 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -67,17 +65,32 @@ public class CampaignService {
 	public void deleteCampaign(String campaignId) {
 
 		try {
-			Campaign campaign = Campaign.fetchById(campaignId, apiContext);
+			Campaign campaign = findCampaign(campaignId);
 			campaign.delete().execute();
 
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("캠페인 삭제 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
 
+	private Campaign findCampaign(String campaignId) {
+
+		try {
+			return new Campaign(campaignId, apiContext).get()
+					.requestNameField()
+					.requestStatusField()
+					.execute();
+
+		} catch (Exception e) {
+			throw UserDefineException.builder()
+					.message("캠페인 조회 실패")
+					.originalMessage(e.getMessage())
+					.build();
+		}
+	}
 
 	public CampaignsResponse getCampaigns(String accountId) {
 
@@ -86,21 +99,21 @@ public class CampaignService {
 			APINodeList<Campaign> campaigns = account.getCampaigns()
 					.requestNameField()
 					.requestStatusField()
-//					.setEffectiveStatus(Arrays.asList(Campaign.EnumEffectiveStatus.VALUE_ACTIVE, Campaign.EnumEffectiveStatus.VALUE_PAUSED))
+//					.setEffectiveStatus(Arrays.asList(MyCampaign.EnumEffectiveStatus.VALUE_ACTIVE, MyCampaign.EnumEffectiveStatus.VALUE_PAUSED))
 					.execute();
 
-			List<CampaignsResponse.CampaignDto> campaignDtos = campaigns.stream()
-					.map(i -> CampaignsResponse.CampaignDto.of(i))
+			List<CampaignsResponse.MyCampaign> myCampaigns = campaigns.stream()
+					.map(i -> CampaignsResponse.MyCampaign.of(i))
 					.collect(Collectors.toList());
 
 			return CampaignsResponse.builder()
-					.campaignDtos(campaignDtos)
+					.myCampaigns(myCampaigns)
 					.build();
 
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("캠페인 리스트 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}

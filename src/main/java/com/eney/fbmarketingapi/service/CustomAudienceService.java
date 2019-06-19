@@ -42,7 +42,7 @@ public class CustomAudienceService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("잠재고객 저장 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -70,7 +70,7 @@ public class CustomAudienceService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("잠재고객 이름, 설명 수정 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -85,7 +85,7 @@ public class CustomAudienceService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("잠재고객 삭제 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -103,7 +103,7 @@ public class CustomAudienceService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("잠재고객 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -124,7 +124,7 @@ public class CustomAudienceService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("잠재고객 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -147,7 +147,7 @@ public class CustomAudienceService {
 		} catch (APIException e) {
 			throw UserDefineException.builder()
 					.message("잠재고객 리스트 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -178,7 +178,7 @@ public class CustomAudienceService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("잠재고객에 유저정보 저장 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}

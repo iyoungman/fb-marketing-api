@@ -87,7 +87,7 @@ public class AdSetService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("광고세트에 잠재고객 셋팅 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -107,7 +107,7 @@ public class AdSetService {
 	}
 
 
-	public AdSet findAdSet(String adSetId) {
+	private AdSet findAdSet(String adSetId) {
 
 		try {
 			return new AdSet(adSetId, apiContext).get()
@@ -119,7 +119,7 @@ public class AdSetService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("광고세트 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -140,7 +140,7 @@ public class AdSetService {
 		} catch (Exception e) {
 			throw UserDefineException.builder()
 					.message("광고세트 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}
@@ -166,7 +166,7 @@ public class AdSetService {
 		} catch (APIException e) {
 			throw UserDefineException.builder()
 					.message("광고세트 리스트 조회 실패")
-					.originalMessage(e.toString())
+					.originalMessage(e.getMessage())
 					.build();
 		}
 	}

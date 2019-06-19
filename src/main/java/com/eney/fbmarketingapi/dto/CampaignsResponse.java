@@ -1,6 +1,5 @@
 package com.eney.fbmarketingapi.dto;
 
-import com.facebook.ads.sdk.Campaign;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,30 +16,30 @@ import java.util.List;
 @NoArgsConstructor
 public class CampaignsResponse {
 
-	private List<CampaignDto> campaignDtos = new ArrayList<>();
+	private List<MyCampaign> myCampaigns = new ArrayList<>();
 
 
 	@Builder
-	public CampaignsResponse(List<CampaignDto> campaignDtos) {
-		this.campaignDtos = campaignDtos;
+	public CampaignsResponse(List<MyCampaign> myCampaigns) {
+		this.myCampaigns = myCampaigns;
 	}
 
 
 
 	@Getter @Setter
 	@NoArgsConstructor
-	public static class CampaignDto {
+	public static class MyCampaign {
 		private String id;
 		private String name;
 
 		@Builder
-		public CampaignDto(String id, String name) {
+		public MyCampaign(String id, String name) {
 			this.id = id;
 			this.name = name;
 		}
 
-		public static CampaignDto of(Campaign campaign) {
-			return CampaignDto.builder()
+		public static MyCampaign of(com.facebook.ads.sdk.Campaign campaign) {
+			return MyCampaign.builder()
 					.id(campaign.getId())
 					.name(campaign.getFieldName())
 					.build();
