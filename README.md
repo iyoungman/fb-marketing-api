@@ -20,13 +20,31 @@ https://www.facebook.com/ads/manager
 https://business.facebook.com/asset-library/audience  
 
 ## 광고 개제 Flow
-* API를 통해 캠페인, 광고 세트(잠재 고객 세팅 되어있는) 생성
-* 비즈니스 관리자에서 개제할 광고 세트 선택 후 광고 탭 클릭
-<img src="/img/1.PNG" width="280">  
-* 광고 만들기 클릭
-* 광고 이름 입력 후 임시저장
-* 수정 클릭
-* 
+**1** API를 통해 캠페인, 광고 세트(잠재 고객 세팅 되어있는) 생성  
+---
+**2** 비즈니스 관리자에서 개제할 광고 세트 선택 후 광고 탭 클릭  
+<img src="/img/1.PNG" width="400" height="200">  
+---
+**3** 광고 만들기 클릭  
+<img src="/img/2.PNG" width="300" height="200">  
+---
+**4** 광고 이름 입력 후 임시저장  
+<img src="/img/3.PNG" width="300" height="200">  
+---
+**5** 생성된 광고 수정 클릭  
+---
+**6** 광고를 개제할 페이스북 페이지가 개설되어 있어야 한다  
+<img src="/img/7.PNG" width="300" height="200">  
+---
+**7** 아래와 같이 '**광고 만들기**' 와 '**기존 게시물 사용**' 중 택한다  
+<img src="/img/4.PNG" width="300" height="200">  
+---
+**8** 위에서 택한 페이지에 기존에 만들어 놓은 게시물이 없어**광고 만들기**를 택할 경우 웹 사이트 링크를 필수로 넣어야한다(나머지는 선택 사항)  
+<img src="/img/5.PNG" width="300" height="200"><img src="/img/6.PNG" width="300" height="200">  
+---  
+**9** 위에서 택한 페이지에 기존에 만들어 놓은 게시물이 있다면 **기존 게시물 사용**을 택한 후 게시물 변경에서 게시물 선택  
+<img src="/img/9.PNG" width="300" height="200"><img src="/img/8.PNG" width="300" height="200">  
+---  
 
 ## Details
 * Swagger를 통해 Request와 Response 확인 가능  
