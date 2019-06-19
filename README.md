@@ -25,5 +25,5 @@ http://localhost:8080/swagger-ui.html
 
 ## Reference
 * [페이스북 마케팅 API 사용 참고1](https://developers.facebook.com/docs/marketing-api/buying-api)  
-* [페이스북 마케팅 API 사용 참고2](https://github.com/facebook/facebook-java-business-sdk)  
+* [페이스북 마케팅 API 사용 참고2](https://github.com/facebook/facebook-java-business-sdk)-예전에 나온 버전에 대한 내용이라 일부 내용만 참고  
 * [맞춤타겟에 핸드폰 번호 저장 참고](https://github.com/15520528/fbapi/blob/455d5f1bc078a7911a76b4de91bebf89031c4750/src/main/java/facebook/FacebookCustomAudience.java)  
