@@ -4,8 +4,10 @@ import com.eney.fbmarketingapi.dto.CampaignCreateRequest;
 import com.eney.fbmarketingapi.dto.CampaignUpdateRequest;
 import com.eney.fbmarketingapi.dto.CampaignsResponse;
 import com.eney.fbmarketingapi.exception.UserDefineException;
-import com.facebook.ads.sdk.*;
-import com.google.gson.Gson;
+import com.facebook.ads.sdk.APIContext;
+import com.facebook.ads.sdk.APINodeList;
+import com.facebook.ads.sdk.AdAccount;
+import com.facebook.ads.sdk.Campaign;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,10 @@ public class CampaignService {
 		}
 	}
 
+
+	/**
+	 * 캠페인 생성
+	 */
 	public void createCampaign(CampaignCreateRequest campaignCreateRequest) {
 
 		try {
@@ -46,6 +52,10 @@ public class CampaignService {
 		}
 	}
 
+
+	/**
+	 * 캠페인 수정
+	 */
 	public void updateCampaign(CampaignUpdateRequest campaignUpdateRequest) {
 
 		try {
@@ -62,6 +72,10 @@ public class CampaignService {
 		}
 	}
 
+
+	/**
+	 * 캠페인 삭제
+	 */
 	public void deleteCampaign(String campaignId) {
 
 		try {
@@ -76,6 +90,10 @@ public class CampaignService {
 		}
 	}
 
+
+	/**
+	 * 캠페인 찾기
+	 */
 	private Campaign findCampaign(String campaignId) {
 
 		try {
@@ -92,6 +110,10 @@ public class CampaignService {
 		}
 	}
 
+
+	/**
+	 * 캠페인 리스트 조회
+	 */
 	public CampaignsResponse getCampaigns(String accountId) {
 
 		try {

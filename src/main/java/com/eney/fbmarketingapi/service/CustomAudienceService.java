@@ -30,6 +30,9 @@ public class CustomAudienceService {
 	}
 
 
+	/**
+	 * 잠재고객 생성
+	 */
 	public void createCustomAudience(CustomAudienceCreateRequest customAudienceCreateRequest) {
 
 		try {
@@ -48,6 +51,9 @@ public class CustomAudienceService {
 	}
 
 
+	/**
+	 * 잠재고객 수정
+	 */
 	public void updateCustomAudience(CustomAudienceUpdateRequest customAudienceUpdateRequest) {
 
 		try {
@@ -76,6 +82,9 @@ public class CustomAudienceService {
 	}
 
 
+	/**
+	 * 잠재고객 삭제
+	 */
 	public void deleteCustomAudience(String customAudienceId) {
 
 		try {
@@ -91,6 +100,9 @@ public class CustomAudienceService {
 	}
 
 
+	/**
+	 * 잠재고객 찾기
+	 */
 	public CustomAudience findCustomAudience(String customAudienceId) {
 
 		try {
@@ -109,6 +121,9 @@ public class CustomAudienceService {
 	}
 
 
+	/**
+	 * 잠재고객 조회
+	 */
 	public CustomAudienceResponse getCustomAudience(String customAudienceId) {
 
 		try {
@@ -130,6 +145,9 @@ public class CustomAudienceService {
 	}
 
 
+	/**
+	 * 잠재고객 리스트 조회
+	 */
 	public CustomAudienceListResponse getCustomAudiences(String accountId) {
 
 		try {
@@ -154,6 +172,7 @@ public class CustomAudienceService {
 
 
 	/**
+	 * 잠재고객에 핸드폰 정보 저장
 	 * 핸드폰 번호를 기반으로 저장하기 위해 hash 값으로 변환
 	 */
 	public boolean saveUserInCustomAudience(CustomAudienceDetailRequest customAudienceDetailRequest) {
@@ -182,4 +201,5 @@ public class CustomAudienceService {
 					.build();
 		}
 	}
+
 }

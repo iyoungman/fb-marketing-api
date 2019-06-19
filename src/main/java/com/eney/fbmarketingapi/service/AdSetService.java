@@ -28,6 +28,10 @@ public class AdSetService {
 		}
 	}
 
+
+	/**
+	 * 광고세트 생성
+	 */
 	public void createAdSet(AdSetCreateRequest adSetCreateRequest) {
 
 		try {
@@ -58,6 +62,10 @@ public class AdSetService {
 		}
 	}
 
+
+	/**
+	 * 광고세트 수정
+	 */
 	public boolean updateAdSet(AdSetUpdateRequest adSetUpdateRequest) {
 
 		try {
@@ -92,6 +100,10 @@ public class AdSetService {
 		}
 	}
 
+
+	/**
+	 * 광고세트 삭제
+	 */
 	public void deleteAdSet(String adSetId) {
 
 		try {
@@ -107,6 +119,9 @@ public class AdSetService {
 	}
 
 
+	/**
+	 * 광고세트 찾기
+	 */
 	private AdSet findAdSet(String adSetId) {
 
 		try {
@@ -125,6 +140,9 @@ public class AdSetService {
 	}
 
 
+	/**
+	 * 광고세트 조회
+	 */
 	public AdSetResponse getAdSet(String adSetId) {
 
 		try {
@@ -146,6 +164,9 @@ public class AdSetService {
 	}
 
 
+	/**
+	 * 광고세트 리스트 조회
+	 */
 	public AdSetListResponse getAllAdSets(String campaignId) {
 
 		try {
@@ -171,90 +192,5 @@ public class AdSetService {
 		}
 	}
 
-
-//	public void terere() {
-//
-//		try {
-//			new Ad("23843470601260258", apiContext).getLeads()
-//					.execute();
-//		} catch (APIException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//
-//	public void gett() {
-//		String accessToken = SAMPLE_DATA.ACCESS_TOKEN;
-//		String facebookAppId = SAMPLE_DATA.APPLICATION_ID_STR;
-//		String facebookAppSecret = SAMPLE_DATA.APP_SECRET;
-//
-//		FacebookClient facebookClient = new DefaultFacebookClient(accessToken, Version.VERSION_3_2);
-//		FacebookClient.AccessToken extendedAccessToken = null;
-//		try {
-//			extendedAccessToken = facebookClient.obtainExtendedAccessToken(facebookAppId, facebookAppSecret, accessToken);
-//			System.out.println(extendedAccessToken);
-//		} catch (FacebookException e) {
-//			if (e.getMessage().contains("Error validating access token")) {
-////				throw new UserDefineException("Error validating access token", e.toString(), );
-//			}
-//			throw new RuntimeException("Error exchanging short lived token for long lived token", e);
-//		}
-//		System.out.println(extendedAccessToken.getAccessToken());
-////		return extendedAccessToken.getAccessToken();
-//
-//	}
-//
-//	public void searchUser() {
-//		String facebookAppId = SAMPLE_DATA.APPLICATION_ID_STR;
-//		String facebookAppSecret = SAMPLE_DATA.APP_SECRET;
-//		FacebookClient.AccessToken appAccessToken = new DefaultFacebookClient(Version.VERSION_3_2)
-//				.obtainAppAccessToken(facebookAppId, facebookAppSecret);
-//
-//		FacebookClient.AccessToken userAccessToken = new DefaultFacebookClient(Version.VERSION_3_2)
-//				.obtainUserAccessToken(facebookAppId, facebookAppSecret, "http://localhost:8080/login", appAccessToken.getAccessToken());
-//
-//		System.out.println(userAccessToken.getAccessToken());
-////		FacebookClient facebookClient23 = new DefaultFacebookClient(accessToken.getAccessToken(), Version.VERSION_2_3);
-////		User user = facebookClient23.fetchObject(id, User.class, Parameter.with("fields","about,age_range, birthday,context, education,email,gender, first_name, last_name, relationship_status, work"));
-//
-////		return user;
-//	}
-//
-//	public void obtatin() {
-//		String facebookAppId = SAMPLE_DATA.APPLICATION_ID_STR;
-//		String facebookAppSecret = SAMPLE_DATA.APP_SECRET;
-//		FacebookClient.AccessToken accessToken = new DefaultFacebookClient(Version.VERSION_3_2).obtainAppAccessToken(facebookAppId, facebookAppSecret);
-//		System.out.println(accessToken.getAccessToken());
-//	}
-
-
-	/**
-	 * 광고형식 디자인 만들기
-	 */
-	/*public AdCreative saveAdCreative() {
-
-		APIContext context = new APIContext(ExampleConfig.ACCESS_TOKEN).enableDebug(true);
-		try {
-			AdCreative adCreative = new AdAccount(ExampleConfig.ACCOUNT_ID, context).createAdCreative()
-					.setName("Sample Ad Creative")
-					.setObjectStorySpec(
-							new AdCreativeObjectStorySpec()
-									.setFieldLinkData(
-											new AdCreativeLinkData()
-//													.setFieldCaption("My caption")
-													//												.setFieldImageHash()
-													.setFieldLink("https://www.facebook.com/327278767980313")
-													.setFieldMessage("try it out")
-									)
-									.setFieldPageId(ExampleConfig.PAGE_ID)
-					)
-					.execute();
-
-			return adCreative;
-		} catch (APIException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}*/
 
 }
