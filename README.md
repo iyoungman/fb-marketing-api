@@ -27,18 +27,18 @@ https://business.facebook.com/asset-library/audience
 ---
 3. 광고 만들기 클릭  
 <img src="/img/2.PNG" width="300" height="200">  
----
+---  
 4. 광고 이름 입력 후 임시저장  
 <img src="/img/3.PNG" width="300" height="200">  
----
+---  
 5. 생성된 광고 수정 클릭  
----
+---  
 6. 광고를 개제할 페이스북 페이지가 개설되어 있어야 한다  
 <img src="/img/7.PNG" width="300" height="200">  
----
+---  
 7. 아래와 같이 '**광고 만들기**' 와 '**기존 게시물 사용**' 중 택한다  
 <img src="/img/4.PNG" width="300" height="200">  
----
+---  
 8. 6에서 택한 페이지에 기존에 만들어 놓은 게시물이 없어**광고 만들기**를 택할 경우 웹 사이트 링크를 필수로 넣어야한다(나머지는 선택 사항)  
 <img src="/img/5.PNG" width="400" height="200"> &nbsp; <img src="/img/6.PNG" width="400" height="200">  
 ---  
