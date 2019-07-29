@@ -19,10 +19,10 @@ https://www.facebook.com/ads/manager
 * API를 통해 실제 페이스북에 생성된 잠재 고객(맞춤 타겟) 결과는 페이스북 자산 라이브러리-타겟메뉴에서 확인 가능   
 https://business.facebook.com/asset-library/audience  
 
-## 광고 개제 Flow
+## 광고 개제 Flow  
 **1.** API를 통해 캠페인, 광고 세트(잠재 고객 세팅 되어있는) 생성  
 ---
-**2.** 비즈니스 관리자에서 개제할 광고 세트 선택 후 광고 탭 클릭  
+**1.** 비즈니스 관리자에서 개제할 광고 세트 선택 후 광고 탭 클릭  
 <img src="/img/1.PNG" width="600" height="200">  
 ---
 **3.** 광고 만들기 클릭  
