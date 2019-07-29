@@ -1,7 +1,7 @@
 # Product Name
 > Facebook Marketing Api
 
-## Motivation
+## Introduce
 페이스북 마케팅 API 연동
 
 ## Require
